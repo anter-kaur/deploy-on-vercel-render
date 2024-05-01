@@ -52,7 +52,7 @@ router.post('/login',async(req,res)=>{
     res
     .cookie('accessToken',token,{
         httpOnly:true,
-        maxAge: 9000000000
+        maxAge: 3*24*60*60*1000
     })
     .status(200).json({message:'Logged in successfully'})
 }

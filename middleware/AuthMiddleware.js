@@ -8,6 +8,7 @@ const AuthMiddleware=(req,res,next)=>{
     const tokenverified=jwt.verify(token,process.env.JWT_ACCESS_TOKEN)
     console.log('token verified--->>>',tokenverified)
     console.log('User registered')
+    req.user=tokenverified
     next();
     }
     catch(error){

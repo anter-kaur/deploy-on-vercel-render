@@ -1,12 +1,12 @@
 const mongoose=require('mongoose')
 
 const connect=()=>{
-    mongoose.connect(`${process.env.URI}/testDatabase`)
+    mongoose.connect(process.env.URI)
     .then(()=>{
         console.log('Connected to database')
     })
-    .catch(()=>{
-        console.log('Error while connecting to db')
+    .catch((error)=>{
+        console.log('Error while connecting to db',error)
     })
 }
 

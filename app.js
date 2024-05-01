@@ -27,9 +27,9 @@ app.use('/api/user',userRouter)
 connect();
 
 app.get("/", (req, res) => {
-    app.use(express.static(path.resolve(__dirname, "frontend", "build")));
-    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
-    });
+app.use(express.static(path.resolve(__dirname, "frontend", "build")));
+res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
+});
     
 
 app.listen(process.env.PORT,()=>{
